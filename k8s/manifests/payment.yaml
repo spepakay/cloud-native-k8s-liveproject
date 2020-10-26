@@ -33,6 +33,19 @@ spec:
           limits:
             cpu: 300m
             memory: 192Mi
+        livenessProbe:
+          httpGet:
+            path: /health/alive
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 60
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 60
+
 ---
 apiVersion: v1
 kind: Service
