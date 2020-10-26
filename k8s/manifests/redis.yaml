@@ -20,6 +20,9 @@ spec:
         image: redis:6.0.4-alpine
         ports:
         - containerPort: 6379
+        env:
+          - name: REDIS_PASSWORD
+            value: "secret1234"
         resources:
           requests:
             cpu: 200m
