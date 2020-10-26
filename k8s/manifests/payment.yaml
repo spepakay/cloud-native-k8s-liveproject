@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: payment
-        image: sns-payment:latest
+        image: gcr.io/protean-buffer-293701/sns-payment:latest
         ports:
         - containerPort: 3000
         env:
@@ -25,7 +25,7 @@ spec:
             value: "production"
           - name: CONFIG_DIR
             value: "/opt/sns/app/config"
-        imagePullPolicy: "Never"
+        imagePullPolicy: "Always"
 ---
 apiVersion: v1
 kind: Service
