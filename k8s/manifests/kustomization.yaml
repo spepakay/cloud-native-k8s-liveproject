@@ -13,5 +13,5 @@ secretGenerator:
 - name: redis
   namespace: sns
   files:
-    - redis-conf
+    - redis.conf
     - redis-passwd
